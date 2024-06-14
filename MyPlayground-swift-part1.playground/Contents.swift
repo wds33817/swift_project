@@ -448,77 +448,133 @@ extension Double {
 //print("hello \" and \\/")
 
 
+//
+//let 衝浪 = "🏄\u{200D}"
+//let 男人 = "\u{2642}\u{FE0F}"
+//let 女人 = "\u{2640}\u{FE0F}"
+//
+//
+//print("""
+//    🐬
+//🌊🌊🌊🌊🌊\(衝浪)🌊🌊🌊\(衝浪+女人)🌊\(衝浪+男人)🌊🌊🌊🌊🌊🏖🌴
+//
+//
+//
+//""")
+//
+//
+//
+//let emoji = "\u{1F495}"
+//let heartArt =  """
+//\t\t\t\t\t    \(emoji)\(emoji)\(emoji)     \(emoji)\(emoji)\(emoji)
+//\t\t\t\t\t  \(emoji)      \(emoji)\(emoji)      \(emoji)
+//\t\t\t\t\t \(emoji)        \(emoji)        \(emoji)
+//\t\t\t\t\t \(emoji)                  \(emoji)
+//\t\t\t\t\t  \(emoji)                \(emoji)
+//\t\t\t\t\t   \(emoji)             \(emoji)
+//\t\t\t\t\t     \(emoji)         \(emoji)
+//\t\t\t\t\t\t \(emoji)    \(emoji)
+//\t\t\t\t\t\t    \(emoji)
+//"""
+//
+//let s = "" // 這個 s 變數只是加了讓你再複製貼上時圖片不會因為空白鍵被自動吃掉而跑位，可以無視這行，如果你想在你的皮卡丘前面多加一些空白也可以調整這個變數的內容。
+//let pikachu = """
+//quu..__
+//\(s) $$$b  `---.__
+//\(s)  "$$b        `--.                          ___.---uuudP
+//\(s)   `$$b           `.__.------.__     __.---'      $$$$"              .
+//\(s)     "$b          -'            `-.-'            $$$"              .'|
+//\(s)       ".                                       d$"             _.'  |
+//\(s)         `.   /                              ..."             .'     |
+//\(s)           `./                           ..::-'            _.'       |
+//\(s)            /                         .:::-'            .-'         .'
+//\(s)           :                          ::''\\          _.'            |
+//\(s)          .' .-.             .-.           `.      .'               |
+//\(s)          : /'$$|           .@"$\\           `.   .'              _.-'
+//\(s)         .'|$u$$|          |$$,$$|           |  <            _.-'
+//\(s)         | `:$$:'          :$$$$$:           `.  `.       .-'
+//\(s)         :                  `"--'             |    `-.     \\
+//\(s)        :##.       ==             .###.       `.      `.    `\\
+//\(s)        |##:                      :###:        |        >     >
+//\(s)        |#'     `..'`..'          `###'        x:      /     /
+//\(s)         \\                                   xXX|     /    ./
+//\(s)          \\                                xXXX'|    /   ./
+//\(s)          /`-.                                  `.  /   /
+//\(s)         :    `-  ...........,                   | /  .'
+//\(s)         |         ``:::::::'       .            |<    `.
+//\(s)         |             ```          |           x| \\ `.:``.
+//\(s)         |                         .'    /'   xXX|  `:`M`M':.
+//\(s)         |    |                    ;    /:' xXXX'|  -'MMMMM:'
+//\(s)         `.  .'                   :    /:'       |-'MMMM.-'
+//\(s)          |  |                   .'   /'        .'MMM.-'
+//\(s)          `'`'                   :  ,'          |MMM<
+//\(s)            |                     `'            |tbap\\
+//\(s)             \\                                  :MM.-'
+//\(s)              \\                 |              .''
+//\(s)               \\.               `.            /
+//\(s)                /     .:::::::.. :           /
+//\(s)               |     .:::::::::::`.         /
+//\(s)               |   .:::------------\\       /
+//\(s)              /   .''               >::'  /
+//\(s)              `',:                 :    .'
+//\(s)                                   `:.:'
+//"""
+//
+//
+//print(heartArt + "\n" + pikachu)
+//
+//let yes = true
+//let no: Bool = false
+//
+//let n: Int = 16
+//print(n.isMultiple(of: 2))
+//
+//let price: Double = 1.1
+//price.isEqual(to: 1.1)
+//price.isLess(than: 1.2)
+//
+//
+//let string = "123"
+//string.isEmpty
+//string.hasPrefix("1234")
+//string.hasSuffix("3")
+//string.contains("12")
+//
+//let payment = 4999.0
+//print(payment.isLess(than: 500) ? "pay express fee yourself" : "free of express charge")
 
-let 衝浪 = "🏄\u{200D}"
-let 男人 = "\u{2642}\u{FE0F}"
-let 女人 = "\u{2640}\u{FE0F}"
+func check(weight: Double, height: Double){
+    print("weight: \(weight), height: \(height)")
+    let res = weight / (height/100 * height/100)
+    if res < 20.0 {
+        print("you cannot give away blood")
+    } else {
+        print("you can give away blood")
+    }
+    print("your BMI is \(res)")
+    if res < 20.0 {
+        print("too thin")
+    } else if res < 25.0 {
+        print("normal body")
+    } else {
+        print("over weight")
+    }
+    print("-----------------")
+}
+check(weight: 47.95385, height: 161.0)
+check(weight: 75.0, height: 175.0)
+check(weight:130.0, height: 180.0)
+check(weight: 74.5, height: 178.1)
 
-
-print("""
-    🐬
-🌊🌊🌊🌊🌊\(衝浪)🌊🌊🌊\(衝浪+女人)🌊\(衝浪+男人)🌊🌊🌊🌊🌊🏖🌴
-
-
-
-""")
-
-
-
-let emoji = "\u{1F495}"
-let heartArt =  """
-\t\t\t\t\t    \(emoji)\(emoji)\(emoji)     \(emoji)\(emoji)\(emoji)
-\t\t\t\t\t  \(emoji)      \(emoji)\(emoji)      \(emoji)
-\t\t\t\t\t \(emoji)        \(emoji)        \(emoji)
-\t\t\t\t\t \(emoji)                  \(emoji)
-\t\t\t\t\t  \(emoji)                \(emoji)
-\t\t\t\t\t   \(emoji)             \(emoji)
-\t\t\t\t\t     \(emoji)         \(emoji)
-\t\t\t\t\t\t \(emoji)    \(emoji)
-\t\t\t\t\t\t    \(emoji)
-"""
-
-let s = "" // 這個 s 變數只是加了讓你再複製貼上時圖片不會因為空白鍵被自動吃掉而跑位，可以無視這行，如果你想在你的皮卡丘前面多加一些空白也可以調整這個變數的內容。
-let pikachu = """
-quu..__
-\(s) $$$b  `---.__
-\(s)  "$$b        `--.                          ___.---uuudP
-\(s)   `$$b           `.__.------.__     __.---'      $$$$"              .
-\(s)     "$b          -'            `-.-'            $$$"              .'|
-\(s)       ".                                       d$"             _.'  |
-\(s)         `.   /                              ..."             .'     |
-\(s)           `./                           ..::-'            _.'       |
-\(s)            /                         .:::-'            .-'         .'
-\(s)           :                          ::''\\          _.'            |
-\(s)          .' .-.             .-.           `.      .'               |
-\(s)          : /'$$|           .@"$\\           `.   .'              _.-'
-\(s)         .'|$u$$|          |$$,$$|           |  <            _.-'
-\(s)         | `:$$:'          :$$$$$:           `.  `.       .-'
-\(s)         :                  `"--'             |    `-.     \\
-\(s)        :##.       ==             .###.       `.      `.    `\\
-\(s)        |##:                      :###:        |        >     >
-\(s)        |#'     `..'`..'          `###'        x:      /     /
-\(s)         \\                                   xXX|     /    ./
-\(s)          \\                                xXXX'|    /   ./
-\(s)          /`-.                                  `.  /   /
-\(s)         :    `-  ...........,                   | /  .'
-\(s)         |         ``:::::::'       .            |<    `.
-\(s)         |             ```          |           x| \\ `.:``.
-\(s)         |                         .'    /'   xXX|  `:`M`M':.
-\(s)         |    |                    ;    /:' xXXX'|  -'MMMMM:'
-\(s)         `.  .'                   :    /:'       |-'MMMM.-'
-\(s)          |  |                   .'   /'        .'MMM.-'
-\(s)          `'`'                   :  ,'          |MMM<
-\(s)            |                     `'            |tbap\\
-\(s)             \\                                  :MM.-'
-\(s)              \\                 |              .''
-\(s)               \\.               `.            /
-\(s)                /     .:::::::.. :           /
-\(s)               |     .:::::::::::`.         /
-\(s)               |   .:::------------\\       /
-\(s)              /   .''               >::'  /
-\(s)              `',:                 :    .'
-\(s)                                   `:.:'
-"""
-
-
-print(heartArt + "\n" + pikachu)
+func checkName(name: String) {
+    if name.hasPrefix("虎") {
+        print("Name is \(name), You can have half price discount")
+    } else if name.contains("虎") {
+        print("Name is \(name), You can have 80% price discount")
+    } else {
+        print("Name is \(name), You can have no price discount")
+    }
+}
+checkName(name: "小老虎")
+checkName(name: "虎氛围")
+checkName(name: "小老发")
