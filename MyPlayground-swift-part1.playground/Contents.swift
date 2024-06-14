@@ -542,39 +542,196 @@ extension Double {
 //
 //let payment = 4999.0
 //print(payment.isLess(than: 500) ? "pay express fee yourself" : "free of express charge")
+//
+//func check(weight: Double, height: Double){
+//    print("weight: \(weight), height: \(height)")
+//    let res = weight / (height/100 * height/100)
+//    if res < 20.0 {
+//        print("you cannot give away blood")
+//    } else {
+//        print("you can give away blood")
+//    }
+//    print("your BMI is \(res)")
+//    if res < 20.0 {
+//        print("too thin")
+//    } else if res < 25.0 {
+//        print("normal body")
+//    } else {
+//        print("over weight")
+//    }
+//    print("-----------------")
+//}
+//check(weight: 47.95385, height: 161.0)
+//check(weight: 75.0, height: 175.0)
+//check(weight:130.0, height: 180.0)
+//check(weight: 74.5, height: 178.1)
+//
+//func checkName(name: String) {
+//    if name.hasPrefix("虎") {
+//        print("Name is \(name), You can have half price discount")
+//    } else if name.contains("虎") {
+//        print("Name is \(name), You can have 80% price discount")
+//    } else {
+//        print("Name is \(name), You can have no price discount")
+//    }
+//}
+//checkName(name: "小老虎")
+//checkName(name: "虎氛围")
+//checkName(name: "小老发")
 
-func check(weight: Double, height: Double){
-    print("weight: \(weight), height: \(height)")
-    let res = weight / (height/100 * height/100)
-    if res < 20.0 {
-        print("you cannot give away blood")
-    } else {
-        print("you can give away blood")
-    }
-    print("your BMI is \(res)")
-    if res < 20.0 {
-        print("too thin")
-    } else if res < 25.0 {
-        print("normal body")
-    } else {
-        print("over weight")
-    }
-    print("-----------------")
-}
-check(weight: 47.95385, height: 161.0)
-check(weight: 75.0, height: 175.0)
-check(weight:130.0, height: 180.0)
-check(weight: 74.5, height: 178.1)
 
-func checkName(name: String) {
-    if name.hasPrefix("虎") {
-        print("Name is \(name), You can have half price discount")
-    } else if name.contains("虎") {
-        print("Name is \(name), You can have 80% price discount")
-    } else {
-        print("Name is \(name), You can have no price discount")
-    }
-}
-checkName(name: "小老虎")
-checkName(name: "虎氛围")
-checkName(name: "小老发")
+//let n1 : Int = 1800000
+//let n2 : Int = 18000
+//print(n1/n2)
+// 80000 will take 5% of the shares
+
+// || && !  结合的是 bool类型
+// > < <= >= != ==  比较两个相同类型的变量
+//
+
+// 比较逻辑运算子是比较两个相同类型的变量
+
+
+//
+//import Foundation
+//
+///// 一隻可戰鬥的動物。
+//public struct Animal
+//{
+//    public let name: String
+//    public var hp: Int
+//    public let power: Int
+//
+//    /// 建立一隻動物，血量範圍為 1 ~ 50，力量範圍為 1 ~ 10，超過範圍將取最接近值。
+//    /// - Parameter name: 名字
+//    /// - Parameter hp: 血量
+//    /// - Parameter power: 力量
+//    public init(_ name: String, hp: Int, power: Int)
+//    {
+//        var name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+//        if (name.count == 0) { name = "無名氏🥲" }
+//
+//        self.name = name
+//        self.hp = hp < 1 ? 1 : min(50, hp)
+//        self.power = power < 1 ? 1 : min(10, power)
+//    }
+//
+//    /// 和另外一隻動物戰鬥。預設是我方先攻。
+//    /// 這個方法會印出對戰訊息並回傳獲勝的動物。
+//    /// - Returns: 獲勝的動物
+//    public func 戰鬥(對上 敵人: Animal, 我方先攻: Bool = true) -> Animal
+//    {
+//        var attacker = 我方先攻 ? self : 敵人
+//        var defender = 我方先攻 ? 敵人 : self
+//        print("⚔️⚔️⚔️ \(name)（HP \(hp) 力量 \(power)） VS \(敵人.name) （HP \(敵人.hp) 力量 \(敵人.power)）⚔️⚔️⚔️")
+//
+//        while (attacker.hp > 0 && defender.hp > 0)
+//        {
+//            defender.hp -= attacker.power
+//            let hpMessage = defender.hp > 0 ? "\(defender.name)血量剩餘 \(defender.hp)。" : "致命一擊！\(defender.name)被打倒了。"
+//            print("\t\(attacker.name) 對 \(defender.name) 造成了 \(attacker.power) 點傷害！ \(hpMessage)")
+//            (attacker, defender) = (defender, attacker)
+//        }
+//
+//        print("✨「\(defender.name)」獲勝！🏆")
+//        return defender
+//    }
+//
+//    public static let 戰鬥規則: String = "兩隻動物輪流攻擊，1 點力量可以消耗對方 1 點血量，先讓敵方血量歸零者獲勝。"
+//
+//    /// 隨機產生一隻動物
+//    public static func 隨機() -> Animal
+//    {
+//        let names = "🐶🐱🐹🐰🐻🐼🐻‍❄️🐨🐯🦁🐮🐷🐸🐵🐔🐧🐤🦊🐴🦄🐝🐛🦋🐌🐞🐢🐙🦑🦀🐠🐟🐡🐬🦭🐳🦉"
+//        return Animal(String(names.randomElement()!),
+//                      hp: Int.random(in: 10...50),
+//                      power: Int.random(in: 1...20))
+//    }
+//}
+//
+//let n1 = Animal("台北小野猫", hp: 25, power: 7)
+//let n2 = Animal("台东穿山甲", hp: 40, power: 4)
+//print(Animal.戰鬥規則)
+//n1.戰鬥(對上: n2)
+//print("第二輪戰鬥開始！")
+//n2.戰鬥(對上: n1)
+//let n3 = Animal.隨機()
+//n1.戰鬥(對上: n3)
+
+//let fruit = ("banana", 10)
+//print(fruit)
+//let fruit1 = (name: "banana", price: 10)
+//print(fruit1)
+
+
+
+
+//typealias Human = (name: String, height: Int, hairColor: String)
+////Using typealias to create another name for Human
+//typealias Person = Human
+//
+//// instantiate and use the tuple
+//let girl: Person = ("Anna", 155, "gold")
+//print("\(girl.0) \(girl.1) \(girl.2)")
+//print("\(girl.name) \(girl.height) \(girl.hairColor)")
+//
+//let (_, _, hairColor) = girl // _ means omit certain values
+////print(name)
+////print(height)
+//print(hairColor)
+//
+//let man: Person = ("David", 166, "coffee")
+//print("\(man.0) \(man.1) \(man.2)")
+//print("\(man.name) \(man.height) \(man.hairColor)")
+//print(Human("Tom", 199, "Brown"))
+
+
+//
+//typealias student = (name: String, math_score: Int, english_score: Int, history_score: Int, chinese_score: Int)
+//typealias person = student
+//let s1 = person("小鴨", 93, 68, 77, 72)
+//let s2 = person("貝貝", 84, 89, 59, 72)
+//let s1_ave : Double = Double(s1.chinese_score + s1.english_score + s1.history_score + s1.math_score)/4
+//let s2_ave : Double = Double(s2.chinese_score + s2.english_score + s2.history_score + s2.math_score)/4
+//print(s1_ave > s2_ave ? "\(s1.name)的平均分较高, 平均分为\(s1_ave)" : "\(s2.name)的平均分较高, 平均分为\(s2_ave)")
+
+
+//
+//typealias 發票 = (號碼: String, 消費金額: Int)
+//func 結帳(_ 商品價格: [Int]) -> 發票
+//{
+//    let totalCost = 商品價格.reduce(0, +)
+//    return 發票("RE" + Int.random(in: 100...999).description,
+//              totalCost)
+//}
+//func 檢查是否中獎(發票: 發票...) -> Bool
+//{
+//    let win = 發票.first { $0.號碼.hasSuffix("8") }
+//    return !(win == nil)
+//}
+//func check(_ money: Int...) {
+//    let invoice = 結帳(money)
+//    print(invoice.號碼)
+//    if 檢查是否中獎(發票: invoice) {
+//        print("you win!")
+//    } else {
+//        print("thanks!")
+//    }
+//}
+//check(59)
+//check(129, 35, 50)
+//check(215, 90)
+//
+//let num = 123124.04932883240234
+//print(num)
+//print(String(format: "%.2f", num))
+//
+//import Foundation
+//let formatter = NumberFormatter()
+//formatter.maximumFractionDigits = 2
+//formatter.roundingMode = .ceiling
+//formatter.numberStyle = .spellOut
+//formatter.locale = Locale(identifier: "zh_CN")
+//print(formatter.string(for: num)!)
+
+
