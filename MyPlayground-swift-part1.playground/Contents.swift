@@ -1,5 +1,7 @@
 //import UIKit
 
+import Foundation
+
 //var spouseName:String?
 //spouseName = nil
 //print(spouseName ?? "No value in spouseName")
@@ -32,6 +34,11 @@
 //var shopList = ["Eggs", "Milk"]
 //print(shopList.isEmpty)
 //shopList.append("Cooler")
+
+
+
+
+
 //print(shopList)
 //shopList += ["Cooking Oil"]
 //print(shopList)
@@ -182,11 +189,141 @@
 //let x = y ?? "Hello"
 //print(x) // 输出 "Hello"
 
+//import UIKit
+//import Foundation
+//
+//var greeting = "Hello, playground"
+//var nums = [1,
+//            2,
+//            3,
+//            4,
+//            5]
+//print(nums)
+
+//let name = "Jane"
+//let location = "USA"
+//print("Hello", name, "from", location, separator: " ", terminator: ".")
+//print()
+//print("finish")
+//print("That's right")
+
+//variable name is a short but meaningful name that is connected with a memory address.
+//var num : Int = 3
+//print(num)
+//let num1 = 3.3
+//print(type(of:num1))
+
+//var familyName = "Wang"
+//var FamilyName = "Wong"
+//var family_name = "Won"
+//var happyDance = "Happy"
+//var HappyDance = "Happ"
+//var happy_dance = "Hap"
+//var gameOfThrone = "Game"
+//var GameOfThrone = "Gam"
+//var game_of_throne = "Ga"
+
+//var name = "Jane"
+//var telNum = "0912-345-678"
+//print(name,"的电话号码是",telNum)
+//var telNewNum = "923904039240932"
+//print("\(name) 改了电话号码为 \(telNewNum)")
+
+//var bornYear = 1998
+//print("1998 年出生的孩子今年 \(2022 - 1998) 岁了")
+//
+//var Fahrenheit = 100
+//print("华氏温度100度大约是摄氏温度的\(Fahrenheit - 63)度了")
+//
+//
+//for i in 300...350 {
+//    if i%11 == 0 {
+//        print("大于300并且是11的倍数的最小数字是\(i)")
+//        break
+//    }
+//}
 
 
+//
+//var n : Decimal = 1000000000000000000
+//print(n)
+
+//var n = Int.max
+//var m = Int.min
+//print(n)
+//print(m)
+
+//print("Int max value: \(Int.max), min value: \(Int.min)")
+//print("Int max value: \(Int8.max), min value: \(Int8.min)")
+//print("Int max value: \(Int16.max), min value: \(Int16.min)")
+//print("Int max value: \(Int32.max), min value: \(Int32.min)")
+//
+//print("Double max value: \(Double.greatestFiniteMagnitude)")
+import Foundation
+
+public func print(_ number: Double, showComma: Bool = false) {
+    if (number < Double.leastNonzeroMagnitude) {
+        Swift.print(number.description)
+        return
+    }
+    var string = number.formattedString
+    if (!showComma) {
+        string = string.replacingOccurrences(of: ",", with: "")
+    }
+    Swift.print(string)
+}
+
+// 扩展 Double 以添加 formattedString 属性
+extension Double {
+    var formattedString: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 305
+        return formatter.string(for: self) ?? self.description
+    }
+}
+
+//// 示例输出
+//print(Double.greatestFiniteMagnitude)
+//print(1234567890.123456, showComma: true)
+//print(1234567890.123456, showComma: false)
 
 
+//let intMax = Double(Int.max) // 15 digits is safe to display
+//print(Int.max - 5807)
+//print(intMax - 5806)
+
+//let double1 : Double = 999_999_999_999_999
+//let double2 : Double = 0.999_999_999_999_999
+//// between 15-16 digits consecutive digits
+//print(double1)
+//print(double2)
+
+// Int can use max or min to search range
+// Double can safely store 15 consecutive digits, and Float can safely store 6 consecutive digits
+
+//let num1 : Double = 12345_12345_12345_6
+//let num2 : Double = 12345_12345_123.45_6
+//
+//print(num1 + 0.001)
+//print(num2 + 0.001)
+
+//print(0.1)
+//print(0.2)
+//print(0.1 + 0.2)
+//print(0.3)
+//let deci1 = Decimal(string:"3.4")!
+//print(deci1)
 
 
+//var a = Int.init(1.1)
+//print(Int(), terminator: "")
 
 
+print(Int.max)
+print(Double.greatestFiniteMagnitude)
+print(Decimal.greatestFiniteMagnitude)
+
+let a = Decimal(string: "0.1")!
+let b = Decimal(string: "0.2")!
+print(a + b)
