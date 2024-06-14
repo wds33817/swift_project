@@ -278,7 +278,8 @@ extension Double {
     var formattedString: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 305
+        formatter.maximumFractionDigits = 325
+        formatter.maximumSignificantDigits = 325
         return formatter.string(for: self) ?? self.description
     }
 }
@@ -320,10 +321,62 @@ extension Double {
 //print(Int(), terminator: "")
 
 
-print(Int.max)
-print(Double.greatestFiniteMagnitude)
-print(Decimal.greatestFiniteMagnitude)
+//print(Int.max)
+//print(Double.greatestFiniteMagnitude)
+//print(Decimal.greatestFiniteMagnitude)
+//
+//let a = Decimal(string: "0.1")!
+//let b = Decimal(string: "0.2")!
+//print(a + b)
 
-let a = Decimal(string: "0.1")!
-let b = Decimal(string: "0.2")!
-print(a + b)
+//let numA = 1234567891234567
+//let numB = 1234567890000000000
+//print(numA)
+//print(numB)
+//
+//var twD: Int = 975_772
+//var jpY = Decimal(string: "\(twD)")!
+//print(jpY*3.95)
+//
+////let n : Decimal = 90000.23
+//var m = Decimal(string: "90000.23")!
+//let doubleToDecimal = Decimal(90000.23)
+//let difference = m - doubleToDecimal
+//print(difference)
+//
+//
+//print(0.1)
+//print(0.2)
+//print(0.1 + 0.2 - 0.3)
+//print(0.3)
+//
+//print(Double.greatestFiniteMagnitude)
+
+//
+//let text: String = "hello~~~~~~~~"
+//print(text.count)
+//print(text.first!)
+//print(text.last!)
+//print(text.uppercased())
+//print(text.lowercased())
+//
+//
+//let text1: String = "🇹🇼"
+//print(text1.count)
+//print(text1.unicodeScalars.count)
+//print(text1.unicodeScalars.first!)
+//print(text1.unicodeScalars.last!)
+//
+//let a = "🇹"
+//let b = "🇼"
+//print("\(a) + \(b) = \(a + b)")
+//String 相当于一串的Character
+//Character 相当于一串的Unicode
+//count相当于他们的共同属性
+
+
+
+
+
+
+f
