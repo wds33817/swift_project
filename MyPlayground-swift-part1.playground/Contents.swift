@@ -375,8 +375,150 @@ extension Double {
 //count相当于他们的共同属性
 
 
+//let m: String = "\u{270D}"
+//let n: String = "\u{2208}"
+//print(m)
+//print(n)
+
+//print("""
+//你
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//好
+//""")
+
+//print("""
+//Language Reference: The Swift Programming Language (TSPL) book is the authoritative reference for Swift, offering a guided tour, a comprehensive guide, and a formal reference of the language.
+//API Design Guidelines: Delivering a clear, consistent developer experience when writing Swift code is largely defined by the names and idioms that appear in APIs. These design guidelines explain how to make sure that your code feels like a part of the larger Swift ecosystem.
+//Standard Library: The Swift standard library defines a base layer of functionality for writing Swift programs.
+//""")
+//
+//let zalgo = "z̴̡̨̫̱̖̱̮̳͌͌́͑̒̎͗͜͝a̴̜̺̖͐̿͐͌̉̀̏̔̀̆͜l̴̛̛̫͍̳͌̂͛̅͑̉̔́̈̄̄̈́͘͝ͅg̷̻͉̤̝͖̣̬̫̀̏̀͂̐͛̚ǫ̶̷̛͈͙̗͔̝͚͙̰̖̦̼̓̌́͊̍́̒̽͋͘͝͠͝"
+//
+//print("\n\n\n\n\n\n\n\(zalgo)\n")
+//
+//print(zalgo.count)
+//
+//print(zalgo.unicodeScalars.count)
+//
+//import Foundation
+//
+//// 定义组合字符
+//let zalgoUp = ["\u{0300}", "\u{0301}", "\u{0302}", "\u{0303}", "\u{0304}", "\u{0305}", "\u{0306}", "\u{0307}", "\u{0308}", "\u{0309}", "\u{030A}", "\u{030B}", "\u{030C}", "\u{030D}", "\u{030E}", "\u{030F}", "\u{0310}", "\u{0311}", "\u{0312}"]
+//let zalgoDown = ["\u{0316}", "\u{0317}", "\u{0318}", "\u{0319}", "\u{031A}", "\u{031B}", "\u{031C}", "\u{031D}", "\u{031E}", "\u{031F}", "\u{0320}", "\u{0321}", "\u{0322}", "\u{0323}", "\u{0324}", "\u{0325}", "\u{0326}", "\u{0327}", "\u{0328}"]
+//let zalgoMid = ["\u{0334}", "\u{0335}", "\u{0336}", "\u{0337}", "\u{0338}", "\u{0339}", "\u{033A}", "\u{033B}", "\u{033C}", "\u{033D}", "\u{033E}", "\u{033F}", "\u{0340}", "\u{0341}", "\u{0342}", "\u{0343}", "\u{0344}", "\u{0345}", "\u{0346}"]
+//
+//// 随机选择组合字符并添加到基础字符上
+//func zalgoize(text: String) -> String {
+//    var zalgoText = ""
+//    for char in text {
+//        zalgoText.append(char)
+//        let upCount = Int.random(in: 1...8)
+//        let downCount = Int.random(in: 1...8)
+//        let midCount = Int.random(in: 1...4)
+//        for _ in 0..<upCount {
+//            zalgoText.append(zalgoUp.randomElement()!)
+//        }
+//        for _ in 0..<downCount {
+//            zalgoText.append(zalgoDown.randomElement()!)
+//        }
+//        for _ in 0..<midCount {
+//            zalgoText.append(zalgoMid.randomElement()!)
+//        }
+//    }
+//    return zalgoText
+//}
+//
+//// 示例文本
+//let normalText = "Hello, world!"
+//let zalgoText = zalgoize(text: normalText)
+//
+//print("\n\n\n\n\n\n\(zalgoText)")
+//print(zalgoText.count) // return the number of character in a string
+//print(zalgoText.unicodeScalars.count)
+//
+//
+//print("hello \" and \\/")
 
 
 
+let 衝浪 = "🏄\u{200D}"
+let 男人 = "\u{2642}\u{FE0F}"
+let 女人 = "\u{2640}\u{FE0F}"
 
-f
+
+print("""
+    🐬
+🌊🌊🌊🌊🌊\(衝浪)🌊🌊🌊\(衝浪+女人)🌊\(衝浪+男人)🌊🌊🌊🌊🌊🏖🌴
+
+
+
+""")
+
+
+
+let emoji = "\u{1F495}"
+let heartArt =  """
+\t\t\t\t\t    \(emoji)\(emoji)\(emoji)     \(emoji)\(emoji)\(emoji)
+\t\t\t\t\t  \(emoji)      \(emoji)\(emoji)      \(emoji)
+\t\t\t\t\t \(emoji)        \(emoji)        \(emoji)
+\t\t\t\t\t \(emoji)                  \(emoji)
+\t\t\t\t\t  \(emoji)                \(emoji)
+\t\t\t\t\t   \(emoji)             \(emoji)
+\t\t\t\t\t     \(emoji)         \(emoji)
+\t\t\t\t\t\t \(emoji)    \(emoji)
+\t\t\t\t\t\t    \(emoji)
+"""
+
+let s = "" // 這個 s 變數只是加了讓你再複製貼上時圖片不會因為空白鍵被自動吃掉而跑位，可以無視這行，如果你想在你的皮卡丘前面多加一些空白也可以調整這個變數的內容。
+let pikachu = """
+quu..__
+\(s) $$$b  `---.__
+\(s)  "$$b        `--.                          ___.---uuudP
+\(s)   `$$b           `.__.------.__     __.---'      $$$$"              .
+\(s)     "$b          -'            `-.-'            $$$"              .'|
+\(s)       ".                                       d$"             _.'  |
+\(s)         `.   /                              ..."             .'     |
+\(s)           `./                           ..::-'            _.'       |
+\(s)            /                         .:::-'            .-'         .'
+\(s)           :                          ::''\\          _.'            |
+\(s)          .' .-.             .-.           `.      .'               |
+\(s)          : /'$$|           .@"$\\           `.   .'              _.-'
+\(s)         .'|$u$$|          |$$,$$|           |  <            _.-'
+\(s)         | `:$$:'          :$$$$$:           `.  `.       .-'
+\(s)         :                  `"--'             |    `-.     \\
+\(s)        :##.       ==             .###.       `.      `.    `\\
+\(s)        |##:                      :###:        |        >     >
+\(s)        |#'     `..'`..'          `###'        x:      /     /
+\(s)         \\                                   xXX|     /    ./
+\(s)          \\                                xXXX'|    /   ./
+\(s)          /`-.                                  `.  /   /
+\(s)         :    `-  ...........,                   | /  .'
+\(s)         |         ``:::::::'       .            |<    `.
+\(s)         |             ```          |           x| \\ `.:``.
+\(s)         |                         .'    /'   xXX|  `:`M`M':.
+\(s)         |    |                    ;    /:' xXXX'|  -'MMMMM:'
+\(s)         `.  .'                   :    /:'       |-'MMMM.-'
+\(s)          |  |                   .'   /'        .'MMM.-'
+\(s)          `'`'                   :  ,'          |MMM<
+\(s)            |                     `'            |tbap\\
+\(s)             \\                                  :MM.-'
+\(s)              \\                 |              .''
+\(s)               \\.               `.            /
+\(s)                /     .:::::::.. :           /
+\(s)               |     .:::::::::::`.         /
+\(s)               |   .:::------------\\       /
+\(s)              /   .''               >::'  /
+\(s)              `',:                 :    .'
+\(s)                                   `:.:'
+"""
+
+
+print(heartArt + "\n" + pikachu)
