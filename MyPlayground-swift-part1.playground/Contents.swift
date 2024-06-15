@@ -722,7 +722,7 @@ extension Double {
 //check(129, 35, 50)
 //check(215, 90)
 //
-//let num = 123124.04932883240234
+let num = 123124.04932883240234
 //print(num)
 //print(String(format: "%.2f", num))
 //
@@ -733,5 +733,334 @@ extension Double {
 //formatter.numberStyle = .spellOut
 //formatter.locale = Locale(identifier: "zh_CN")
 //print(formatter.string(for: num)!)
+//print(formatter.string(for: Double.greatestFiniteMagnitude)!)
+
+//
+//func 入學申請(名字: String, 平均成績: Int, 存款: Int)
+//{
+//    //👇 請根據不同情況印出以下四種結果。
+//    if 平均成績 >= 92 {
+//        print("🎉 \(名字) 以獎學生身份入學。")
+//    } else if 平均成績 >= 80 && 存款 >= 128_000 {
+//        print("✅ \(名字) 可以入學。")
+//    } else if 平均成績 >= 80 && 存款 < 128_000 {
+//        print("😢 \(名字) 成績達入學門檻，但無法支付學費，不能入學。")
+//    } else {
+//        print("❌ \(名字) 成績未達入學門檻，不能入學。")
+//    }
+//}
+//
+//入學申請(名字: "保羅", 平均成績: 80, 存款: 128000)
+//入學申請(名字: "傑克", 平均成績: 92, 存款: 18000)
+//入學申請(名字: "蘿拉", 平均成績: 95, 存款: 356700)
+//入學申請(名字: "馬丁", 平均成績: 70, 存款: 152340)
+//入學申請(名字: "米娜", 平均成績: 84, 存款: 238920)
+//入學申請(名字: "海倫", 平均成績: 90, 存款: 127000)
+
+
+//
+//func 體脂率計算(名字: String, 是男生: Bool, 年齡: Int, 身高: Double, 體重: Double)
+//{
+//    //👇 請根據不同情況印出以下五種結果，記得要計算體脂率並把它印出來的值四捨五入到小數點第一位。
+//    if (年齡 < 18) {
+//        print("\(名字)，多吃多動，健康快樂長大就好。")
+//    } else {
+//        let bmi = 體重 / ((身高 / 100) * (身高 / 100))
+//        let bodyFat = 1.2 * bmi + 0.23 * Double(年齡) - 5.4 - 10.8 * (是男生 ? 1 : 0)
+//        let formatter = NumberFormatter()
+//        formatter.maximumFractionDigits = 1
+//        let bodyFatString = "\(名字)的體脂率是 \(formatter.string(for: bodyFat)!) %"
+//
+//        // 💡 以男生 18~39 歲為基準，計算不同性別和年紀的偏差值。
+//        let genderBias = 是男生 ? 0 : (21 - 8)
+//
+//        let isYoungAdult = 年齡 < 40
+//        var ageBias = 0
+//        if (!isYoungAdult) {
+//            let isElder = 年齡 > 59
+//            if (是男生) { ageBias += isElder ? 5 : 3 }
+//            else { ageBias += isElder ? 3 : 2 }
+//        }
+//
+//        // 💡 把偏差值加起來，計算出正常範圍和肥胖下限
+//        let bias = Double(genderBias + ageBias)
+//        let normalLowerBound  = 8 + bias
+//        let normalUpperBound  = 20 + bias
+//        let obesityLowerBound = 25 + bias
+//        let idealRangeString  = "理想值應為 \(normalLowerBound) ％ ～ \(normalUpperBound) %"
+//
+//        if (bodyFat < normalLowerBound) {
+//            print("\(bodyFatString)，低於正常標準，\(idealRangeString)。")
+//        } else if (bodyFat < normalUpperBound) {
+//            print("\(bodyFatString)，位於正常標準，繼續保持！")
+//        } else if (bodyFat < obesityLowerBound) {
+//            print("\(bodyFatString)，高於正常標準，\(idealRangeString)。")
+//        } else {
+//            print("\(bodyFatString)，屬於過胖體型，\(idealRangeString)。")
+//        }
+//    }
+//}
+//
+//體脂率計算(名字: "亞倫", 是男生: true, 年齡: 17, 身高: 149, 體重: 40)
+//體脂率計算(名字: "克里斯", 是男生: true, 年齡: 40, 身高: 150, 體重: 60)
+//體脂率計算(名字: "丹尼", 是男生: true, 年齡: 20, 身高: 181, 體重: 53)
+//體脂率計算(名字: "比爾", 是男生: true, 年齡: 26, 身高: 165, 體重: 53)
+//體脂率計算(名字: "吉米", 是男生: true, 年齡: 60, 身高: 173, 體重: 120)
+//體脂率計算(名字: "艾瑪", 是男生: false, 年齡: 17, 身高: 149, 體重: 40)
+//體脂率計算(名字: "凱西", 是男生: false, 年齡: 40, 身高: 150, 體重: 60)
+//體脂率計算(名字: "黛比", 是男生: false, 年齡: 20, 身高: 180, 體重: 53)
+//體脂率計算(名字: "瑪麗", 是男生: false, 年齡: 26, 身高: 165, 體重: 53)
+//體脂率計算(名字: "米蘭達", 是男生: false, 年齡: 60, 身高: 173, 體重: 120)
+
+
+
+/*
+range:
+  a..<b  Range
+  
+  a...b  ClosedRange
+  
+  a...   partialRangeFrom
+  ...a
+  ..<a
+ 
+ property:
+ .isEmpty
+ .count
+ .first
+ .last
+ .lowerBound
+ .upperBound
+ 
+ 
+ method:
+ .contains(Bound) -> Bool
+ .randomElement() -> Bound?
+ .overlaps(another range) -> Bool
+ .clamped(to: another range) -> Range<Bound>
+ */
+//
+//let range = 0..<4
+//print(range)
+//print(type(of: range))
+//let range2 = 0.0..<4.0
+//print(type(of: range2))
+//let range3 = "a"..<"z"
+//print(range3)
+//print(type(of: range3))
+//let range4 = 0...4
+//print(type(of: range4))
+//let range5 = 0...
+//print(type(of: range5))
+//print(range.count)
+
+//let range1 = 3..<6
+//let range6 = 3...
+//let stringRange = "a"..."d"
+//print(range1.first!)
+//print(range1.last!)
+//print(range1.lowerBound)
+//print(range1.upperBound)
+//print(range1.count)
+//print(range1.isEmpty)
+//let res = range1.randomElement()
+//print(res!)
+
+//let insect = "👨🏽‍🏫"
+//print(insect.unicodeScalars.first!)
+//print(insect.unicodeScalars.randomElement()!)
+//print(insect.unicodeScalars.last!)
+
+//let range = 1...5
+//print(range.overlaps(6...20))
+//let range1 = 3...8
+//print(range.clamped(to: range1))
+//
+//range ~= 5
+//range.contains(5)
+
+//let g = "M"
+//switch g {
+//    case "F":
+//        print("female")
+//    case "M":
+//        print("male")
+//    default:
+//        print("else")
+//}
+//
+//let temp = 9
+//switch temp {
+//case 30...:
+//    print("hot")
+//case 20...:
+//    print("good")
+//default:
+//    print("cold")
+//}
+
+//let tel: Array<String> = ["123", "1234", "4234"]
+//let tel1: [String] = ["321","231","132"]
+//var tel2 = Array<String>()
+//tel2 = ["111", "1111", "11111"]
+//var tel3 = [String]()
+//tel3 = ["22", "2", "2222"]
+//tel3.insert("hehe", at: 0)
+//tel3.append("123321")
+//tel3.shuffle()
+//for i in tel3 {
+//    print(i)
+//}
+//print(tel3.joined()) // only tel3's element is string
+
+//var nums = [23, 17, 2, 9, 11]
+//
+//let n = Array(nums.sorted().reversed())
+//print(n)
+//print(nums.sorted(by: >)) // from big to small
+//print(nums.sorted(by: <)) // from small to large
+
+
+// in sequence: String, Range, Array
+//for n in 0...5 {
+//    print(n, terminator: "")
+//}
+//print("")
+//let str1 = "helloworld"
+//for i in str1 {
+//    print(i, terminator: ",")
+//}
+
+//for n in 1...5 {
+//    if (n % 2 == 0) { break }
+//    print(n)
+//}
+
+//for i in 1...5 {
+//    if i % 2 == 0 { continue }
+//    print(i, terminator: " ")
+//}
+
+//let v = 1..<7
+//for i in v {
+//    print(i, terminator: " ")
+//}
+
+
+//let staff = ["Tom", "Jack", "Amy"]
+//let routine = ["brooming", "sorting", "reporting"]
+//let isFire = true
+//staffing: for p in staff {
+//routining: for w in routine {
+//        print("\(p) start working on \(w)")
+//        if isFire {
+//            break staffing
+//        }
+//    }
+//}
+
+//
+//var nums = [23, 177, 5, 9, 88]
+//
+//let n = nums.firstIndex(of: 9)!
+//print(n)
+//
+//for i in nums.description {
+//    print(i, terminator: "")
+//}
+
+
+//var peace = true
+//var i = 0
+//while peace {
+//    print("wef")
+//    i+=1
+//    if i == 2 {
+//        break;
+//    }
+//}
+
+
+//var i = 0
+////repeat first execute, the check
+//repeat {
+//    print("let's test")
+//    i += 1
+//} while i != 3
+//print("finished")
+
+//let age = 20
+//var guess = Int.random(in: 0...100)
+//while age != guess {
+//    print("\(guess) wrong")
+//    guess = Int.random(in: 0...100)
+//}
+//print("correct!")
+
+//Swift use Linear Probing dealing with duplicate Hash value
+
+//var n1:Set<String> = ["👩🏽‍🍳", "🧑🏼‍💼", "👨🏼‍💻"]
+//let n2 = Set(["🧑🏼‍💼", "👩🏽‍🍳", "👨🏼‍🎤"])
+//print(n1.union(n2))
+//print(n1.subtracting(n2))
+//print(n1.intersection(n2))
+//print(n1.symmetricDifference(n2))
+//n1.insert("👨🏼‍⚖️")
+//print(n1)
+//n1.update(with: "👨🏿‍🔬")
+//print(n1)
+//n1.remove("👨🏿‍🔬")
+//print(n1)
+//n1.removeAll()
+//print(n1)
+
+//let dict: Dictionary<String, Int> = [:]
+//var dict2: [String: Int] = [:]
+//let dict3 = Dictionary<String, Int>()
+//let dict4 = [String: Int]()
+//dict2["apple"] = 3
+//dict2["pear"] = 1
+//dict2.updateValue(10, forKey: "pear")
+//print(dict2)
+//dict2["peanuts", default: 0] += 1
+//dict2["peanuts", default: 0] += 1
+//dict2["peanuts"]! += 6
+//print(dict2)
+//
+//for num in dict2.values {
+//    print(num)
+//}
+//for (name, _) in dict2 {
+//    print(name)
+//}
+
+//for pair in dict2 {
+//    print(pair.key)
+//}
+
+
+//dict2.removeValue(forKey: "peanuts")
+//dict2["apple"] = nil
+//print(dict2)
+//
+//let sentence = "family!"
+//
+//print(sentence.first!)
+//print(sentence[sentence.startIndex])
+//print(sentence.last!)
+//print(sentence[sentence.index(before: sentence.endIndex)])
+//print(sentence[sentence.index(sentence.startIndex, offsetBy: 6)])
+//print(sentence[sentence.index(sentence.startIndex, offsetBy: 6, limitedBy: sentence.index(before: sentence.endIndex)) ?? sentence.startIndex])
+
+//func sum<T: AdditiveArithmetic>(_ data: [T]) -> T {
+//    var total: T = T.zero
+//    return total
+//}
+
+//let numbers = [1, 2, 3, 4]
+//let squaredNumbers = numbers.map { $0 * $0 }
+//print(squaredNumbers)
+// 输出: [1, 4, 9, 16]
+
 
 
