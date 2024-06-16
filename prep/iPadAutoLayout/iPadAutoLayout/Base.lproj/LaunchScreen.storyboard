@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-sO-dJU">
-                                <rect key="frame" x="300" y="215" width="211" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-sO-dJU">
+                                <rect key="frame" x="310" y="220" width="200" height="60"/>
                                 <color key="tintColor" red="0.24313725490196078" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -28,6 +27,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.92549019607843142" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GA6-sO-dJU" secondAttribute="trailing" constant="310" id="Kj1-br-br4"/>
+                            <constraint firstItem="GA6-sO-dJU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="XQ7-kE-y7N"/>
+                            <constraint firstItem="GA6-sO-dJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="310" id="fNa-xM-7g2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GA6-sO-dJU" secondAttribute="trailing" constant="300" id="o1P-Lc-xEm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
