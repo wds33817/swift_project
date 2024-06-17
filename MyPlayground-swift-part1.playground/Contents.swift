@@ -1062,5 +1062,8 @@ range:
 //print(squaredNumbers)
 // 输出: [1, 4, 9, 16]
 
+// 学写UIKit 找工作的概率大很多
+// 新版本是swiftui
+
 
 
