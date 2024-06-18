@@ -1064,6 +1064,169 @@ range:
 
 // 学写UIKit 找工作的概率大很多
 // 新版本是swiftui
+// Value type -> copy
+// Reference type -> location
+/*
+   struct 有静态空间和实例空间
+   静态空间通过 类存取
+   实例空间通过 实例化之后存取
+ 
+ 
+ */
+
+//struct Dog { // use BigCamel to name
+//    var age : Int
+//    var name : String
+//    let kind : String
+//
+//    mutating func changeName(to newName: String) {
+//        name = newName
+//    }
+//}
+//var dog2 = Dog(age: 3, name: "Samba", kind: "Q")//.changeName(to: "Jinji")
+//dog2.changeName(to: "Jinji")
+//print(dog2)
+//
+//var dog1 = Dog(age: 2, name: "Subh", kind: "Permaschu")
+//dog1.age = 3
+//print(dog1)
+
+//struct Dog {
+//    private(set) var age : Int
+//    var name : String
+//    let kind : String
+//    init(_ age: Int, _ name: String, kind: String) {
+//        self.age = age
+//        self.name = name
+//        self.kind = kind
+//    }
+//    static let name = "Canis lupus familiaris"
+//    static func printIntro() {
+//        print("dog name is \(self.name), is reliable friend")
+//    } // here self means Dog type itself
+//}
+//
+//Dog.printIntro()
+//let dog3 = Dog.init(4, "Samba", kind: "quiq")
+//
+//print(dog3)
+// Self
+
+
+//struct is a value type data structure
+// bool, int, array, dict, enum all value type
+//
+//struct Dog: Hashable {
+//    func hash(into hasher: inout Hasher) {
+//
+//    }
+//}
+
+//struct Human:Equatable {
+//    static var population = 0
+//    var name: String
+//    var age = 5
+//    var height = 100
+//    init(_ name: String) {
+//        self.name = name
+//        Self.population += 1
+//    }
+//    init(_ name: String, age: Int, height: Int) {
+//        self.name = name
+//        self.age = age
+//        self.height = height
+//        Self.population += 1
+//    }
+//    static func == (lhs: Self, rhs: Self) -> Bool{
+//        return lhs.name == rhs.name && lhs.age == rhs.age && lhs.height == rhs.height
+//    }
+//    mutating func spendBirthday() {
+//        age += 1
+//        print("\(name) \(age) years old happy birthday~~")
+//        if age < 20 {
+//            height += (0...5).randomElement()!
+//        }
+//    }
+//
+//    mutating func rebirth() {
+//        self = Human(name)
+//    }
+//}
+//
+//var person = Human("gamer", age: 11, height: 140)
+////person.height = 150
+//var person2 = Human("gamer", age: 11, height: 140)
+//print(person)
+//print(person2)
+//print(person2.spendBirthday(), "You are \(person2.height) now")
+//print(person == person2)
+//person.rebirth()
+//print(person)
+//print("\(Human.population)")
+
+
+// Stored property: calc property
+//struct good {
+//    let originPrice = 100.0
+//    var discount = 0.8
+//    var nowPrice: Double { // calc attribute
+//        originPrice * discount
+//    }
+//    var nowPrice1: Double {
+//        get { originPrice * discount }
+//    }
+//    var nowPrice2: Double {
+//        set(price) {
+//            discount = price / originPrice
+//        }
+//        get {
+//            originPrice * discount
+//        }
+//    }
+//}
+
+//
+//struct good {
+//    let originalPrice = 100.0
+//    var discount = 0.8 {
+//        willSet {
+//            print("discount will adjust to \(newValue)")
+//        }
+//        didSet {
+//            print("discount change from \(oldValue) to \(discount)")
+//        }
+//    }
+//    var sellPrice: Double {
+//        originalPrice * discount
+//    }
+//}
+//
+//var item = good()
+//item.discount = 0.4
+
+
+import Foundation
+
+struct square {
+    var singleSide: Double {
+        willSet {
+            print(">>> will change \(singleSide) to \(newValue)")
+        }
+        didSet {
+            print(">>> have already change \(oldValue) to \(singleSide)")
+        }
+    }
+    private(set) var square: Double
+}
+
+var square1 = square(singleSide: 10, square: 100)
+print(square1)
+
+square1.singleSide = 20
+print(square1)
+
+
+
 
 
 
