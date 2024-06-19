@@ -1204,27 +1204,51 @@ range:
 //var item = good()
 //item.discount = 0.4
 
+//
+//import Foundation
+//
+//struct square {
+//    var singleSide: Double {
+//        willSet {
+//            print(">>> will change \(singleSide) to \(newValue)")
+//        }
+//        didSet {
+//            print(">>> have already change \(oldValue) to \(singleSide)")
+//        }
+//    }
+//    private(set) var square: Double
+//}
+//
+//var square1 = square(singleSide: 10, square: 100)
+//print(square1)
+//
+//square1.singleSide = 20
+//print(square1)
 
-import Foundation
-
-struct square {
-    var singleSide: Double {
-        willSet {
-            print(">>> will change \(singleSide) to \(newValue)")
-        }
-        didSet {
-            print(">>> have already change \(oldValue) to \(singleSide)")
-        }
-    }
-    private(set) var square: Double
+protocol SomeDelegate: AnyObject {
+    func didReceiveData(data: String)
 }
 
-var square1 = square(singleSide: 10, square: 100)
-print(square1)
+class DataSender {
+    weak var delegate: SomeDelegate?
+    
+    func sendData() {
+        let data = "Hello, delegate!"
+        delegate?.didReceiveData(data: data)
+    }
+}
 
-square1.singleSide = 20
-print(square1)
+class DataReceiver: SomeDelegate {
+    func didReceiveData(data: String) {
+        print("Received data: \(data)")
+    }
+}
 
+let sender = DataSender()
+let receiver = DataReceiver()
+
+sender.delegate = receiver
+sender.sendData()
 
 
 
