@@ -1225,30 +1225,118 @@ range:
 //square1.singleSide = 20
 //print(square1)
 
-protocol SomeDelegate: AnyObject {
-    func didReceiveData(data: String)
-}
+//protocol SomeDelegate: AnyObject {
+//    func didReceiveData(data: String)
+//}
+//
+//class DataSender {
+//    weak var delegate: SomeDelegate?
+//
+//    func sendData() {
+//        let data = "Hello, delegate!"
+//        delegate?.didReceiveData(data: data)
+//    }
+//}
+//
+//class DataReceiver: SomeDelegate {
+//    func didReceiveData(data: String) {
+//        print("Received data: \(data)")
+//    }
+//}
+//
+//let sender = DataSender()
+//let receiver = DataReceiver()
+//
+//sender.delegate = receiver
+//sender.sendData()
 
-class DataSender {
-    weak var delegate: SomeDelegate?
-    
-    func sendData() {
-        let data = "Hello, delegate!"
-        delegate?.didReceiveData(data: data)
-    }
-}
+//let arr1 : Array<String>
+//arr1 = ["123", "1234"]
+//print(arr1)
 
-class DataReceiver: SomeDelegate {
-    func didReceiveData(data: String) {
-        print("Received data: \(data)")
-    }
-}
+//var array1: Array<String>
+//var array2: [String]
+//var array3 = ["Apple", "Pear", "Orange"]
+//array3.append("Banana")
+//array3.remove(at: 0)
+//print(array3)
 
-let sender = DataSender()
-let receiver = DataReceiver()
+//var listOfNums = [3,2,100,10,1]
+//listOfNums.sort(by: <)
+//print(listOfNums)
+//
+//listOfNums.sort(by: >)
+//print(listOfNums)
 
-sender.delegate = receiver
-sender.sendData()
+
+//var dic1: Dictionary<String, Int> = ["Apple": 32, "Pear":82, "Orange":111]
+//var dic2: [String: Int] = ["Apple": 2, "Pear":3, "Orange":1]
+//var dic4 = [String: Int]()
+//dic4["Apple"] = 33
+//dic4["Autumn"] = 32
+//dic4=[:]
+//print(dic4)
+//
+//var dic3 = ["Apple": 3, "Pear":8, "Orange":11]
+//dic3.removeValue(forKey: "Apple")
+//print(dic3)
+
+//var set1: Set<String> = []
+//set1.insert("dad")
+//print(set1)
+//var set2 = Set<String>()
+//set2.insert("bad boy")
+//set2.insert("bad mother")
+//print(set2)
+//var set3: Set<String> = ["Apple", "Pear", "Orange"]
+//print(set3.count)
+//set3.remove("Pear")
+//print(set3)
+//print(set3.contains("Apple"))
+//set3.insert("Prune")
+//print(set3)
+
+
+// Tuples are not a collection
+// are pairs of two items not necessarily of the same data type
+// complex value
+//let person = ("John", 30, 6.1)
+//let (name, age, height) = person
+//print(name)
+
+//var currency = ("EUR", 0.81)
+//print(currency.0)
+//print(currency.1)
+//print(currency.self)
+//
+//var time = (Date(), "This is my message")
+//print(time.1)
+
+//let intNums = ["Prime": [2,3,5,7,11,13],
+//               "Fibonacci":[1,1,2,3,5,8],
+//               "Square":[1,4,9,16,25]]
+//var largest = 0
+//for (_, numbers) in intNums {
+//    for num in numbers {
+//        if num > largest {
+//            largest = num
+//        }
+//    }
+//}
+//print(largest)
+
+//AppDelegate is a singleton class
+
+
+
+
+
+
+
+
+
+
+
 
 
 
