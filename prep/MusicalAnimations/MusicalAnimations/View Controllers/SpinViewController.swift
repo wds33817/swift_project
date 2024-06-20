@@ -35,7 +35,25 @@ class SpinViewController: UIViewController, AVAudioPlayerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let spinImage = UIImage(named: "munkee.png")
+        spinLayer = CALayer.init()
+        spinLayer?.contents = spinImage?.cgImage
+        spinLayer?.bounds = CGRect(x: 0, y: 0, width: 150, height: 150)
+        spinLayer?.position = CGPoint(x: 300, y: 220)
+        self.view.layer.addSublayer(spinLayer!)
+        
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        
+        rotateAnimation.fromValue = 0
+        rotateAnimation.toValue = 2 * Double.pi
+        
+        rotateAnimation.isRemovedOnCompletion = false
+        rotateAnimation.duration = 0.2
+        
+        rotateAnimation.repeatCount = Float.infinity
+        spinLayer?.add(rotateAnimation, forKey: nil)
+        
         // Do any additional setup after loading the view.
     }
     
